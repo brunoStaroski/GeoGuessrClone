@@ -1,1 +1,1 @@
-# GeoGuessrClone
+Geoguessr clone made with javascript
