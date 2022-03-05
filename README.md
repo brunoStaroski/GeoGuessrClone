@@ -1,1 +1,1 @@
-Geoguessr clone made with javascript
+Geoguessr clone made with vuejs
