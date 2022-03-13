@@ -1,7 +1,6 @@
 <template>
   <div>
     <p>Mapa</p>
-    <div ref="mapDiv" ></div>
     <div ref="streetDiv" style="width: 100%; height: 800px;"></div>
   </div>
 
@@ -18,7 +17,6 @@ export default {
   name: "StreetView",
 
   setup() {
-    const mapDiv = ref(null);
     const streetDiv = ref(null);
     const loader = new Loader({
       apiKey: config.GOOGLE_MAPS_API_KEY //API-KEY
@@ -26,22 +24,18 @@ export default {
 
     onMounted(async () => {
       await loader.load();
-      const map = new google.maps.Map(mapDiv.value, {
-        center: coord,
-        zoom: 14
+      /* let panoramaOptions = {
+        disableDefaultUI: false,
+      }*/
+      new google.maps.StreetViewPanorama(streetDiv.value, {
+        position: coord,
+        pov: {
+          heading: 34,
+          pitch: 10
+        }
       });
-      const streetView = new google.maps.StreetViewPanorama(streetDiv.value,
-          {
-            position: coord,
-            pov: {
-              heading: 34,
-              pitch: 10
-            }
-          });
-      console.log(map);
-      map.setStreetView(streetView);
     })
-    return {mapDiv, streetDiv};
+    return {streetDiv};
   }
 
 
