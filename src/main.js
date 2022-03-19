@@ -1,8 +1,13 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import PrimeVue from 'primevue/config';
 import MainMenu from "@/components/menu/MainMenu";
 import PlayArea from "@/components/playArea/PlayArea";
 import {createRouter, createWebHistory} from "vue-router";
+
+import 'primevue/resources/themes/saga-blue/theme.css'       //theme
+import 'primevue/resources/primevue.min.css'                 //core css
+import 'primeicons/primeicons.css'                           //icons
 
 const history = createWebHistory();
 
@@ -16,4 +21,4 @@ const router = createRouter({
     routes: routes
 })
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).use(PrimeVue).mount('#app')

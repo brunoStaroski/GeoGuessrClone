@@ -1,9 +1,9 @@
 <template>
   <div>
     <nav>
-      <ul>
-        <li v-for="route in rotas" :key="route"><router-link :to="route.path ? route.path : '/'">{{route.name}}</router-link></li>
-      </ul>
+        <router-link :to="'/play'" >
+          <Button class="p-button">Jogar</Button>
+        </router-link>
     </nav>
   </div>
 </template>
@@ -13,7 +13,9 @@ import {routes} from "@/main";
 
 export default {
   name: "MainMenu",
+  components: {
 
+  },
   data() {
     return {
       rotas: routes
@@ -25,8 +27,27 @@ export default {
 <style scoped>
   div {
     font-family: Helvetica, sans-serif;
-    width: 96%;
+    width: 32%;
     margin: 0 auto;
+    border: 1px solid cornflowerblue;
+  }
+
+  ul {
+    margin-left: 40px;
+  }
+
+  .p-button {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none !important;
+
   }
 
 

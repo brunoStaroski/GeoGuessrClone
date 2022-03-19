@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
     <nav>
-      <li><router-link to="">Voltar</router-link></li>
+      <li><router-link to="/">Voltar</router-link></li>
     </nav>
 
   </div>
